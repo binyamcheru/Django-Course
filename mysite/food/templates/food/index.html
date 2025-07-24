@@ -1,0 +1,12 @@
+{% for item in items_list %}
+<ul>
+  <li>
+    <!-- using hard codded url -->
+    <!-- <a href="/food/{{item.id}}">{{item.id}} -- {{item.item_name}}</a> -->
+    <!-- using dynamic approach -->
+    <!-- <a href="{# % url 'detail' item.id % #}">{{item.id}} -- {{item.item_name}}</a> -->
+    <!-- using namespace to avoid if there are conflicts in url -->
+    <a href="{% url 'food:detail' item.id %}">{{item.id}} -- {{item.item_name}}</a>
+  </li>
+</ul>
+{% endfor %}
